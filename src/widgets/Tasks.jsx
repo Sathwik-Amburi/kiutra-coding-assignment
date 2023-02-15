@@ -86,14 +86,21 @@ export default function Tasks() {
                   position: "relative",
                 }}
               >
-                <Fab
-                  color="error"
-                  aria-label="delete"
-                  sx={{ position: "absolute", top: 0, right: 0 }}
-                  onClick={() => dispatch(deleteTask(task.id))}
-                >
-                  <ClearIcon />
-                </Fab>
+                <Box sx={{ "& > :not(style)": { m: 1 } }}>
+                  <Fab
+                    color="error"
+                    aria-label="delete"
+                    sx={{
+                      position: "absolute", // add absolute positioning to the Fab component
+                      top: "-25px", // adjust top position to move the Fab up
+                      right: "-25px", // adjust right position to move the Fab to the right
+                    }}
+                    onClick={() => dispatch(deleteTask(task.id))}
+                  >
+                    <ClearIcon />
+                  </Fab>
+                </Box>
+
                 <Box onClick={() => handleTaskClick(task)}>
                   <Box sx={{ borderBottom: "1px solid #ccc", mb: 1, pb: 1 }}>
                     <Typography variant="h6" component="h3">
@@ -101,7 +108,9 @@ export default function Tasks() {
                     </Typography>
                   </Box>
                   <Box sx={{ mb: 1 }}>
-                    <Typography variant="body1">{task.description}</Typography>
+                    <Typography variant="body1">
+                      <b>Description:</b> {task.description}
+                    </Typography>
                   </Box>
                   <Box>
                     <Typography variant="body2">{task.status}</Typography>

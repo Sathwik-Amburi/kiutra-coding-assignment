@@ -62,7 +62,7 @@ export default function TaskControls() {
         <Fab variant="extended" color="secondary" onClick={handleOpen}>
           <AddIcon sx={{ mr: 1 }} />
           Add Task
-        </Fab>
+        </Fab>{" "}
         <Fab
           variant="extended"
           color="secondary"
