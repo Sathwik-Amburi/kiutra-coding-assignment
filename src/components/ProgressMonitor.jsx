@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Box } from "@mui/material";
 import Tasks from "../widgets/Tasks";
-import AddTasks from "../widgets/TaskControls";
+import TimeLine from "../widgets/Timeline";
 
 export default function ProgressMonitor() {
   return (
@@ -9,6 +9,9 @@ export default function ProgressMonitor() {
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Tasks />
+        </Grid>
+        <Grid item xs={12}>
+          <TimeLine />
         </Grid>
       </Grid>
     </Box>

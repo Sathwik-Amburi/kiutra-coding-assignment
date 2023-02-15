@@ -5,7 +5,7 @@ const tasks = [
     id: Date.now(),
     Task: "Complete Progress Monitor",
     description: "Implment the Progress Monitor",
-    status: "In Progress",
+    status: "Completed",
   },
 ];
 
