@@ -1,42 +1,64 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import ProgressMonitor from "../components/ProgressMonitor";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+  Box,
+  Link,
+  Fab,
+} from "@mui/material";
+import { GitHub } from "@mui/icons-material";
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Kiutra Coding Assingment</title>
+        <title>Kiutra Coding Assignment</title>
         <meta name="description" content="Progress Monitor" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Progress Monitor built by
-            <code className={styles.code}> Sathwik Amburi</code>
-          </p>
-        </div>
-        <div className={styles.grid}>
-          <a
+
+      <AppBar position="static" sx={{ backgroundColor: "#1c1c1c" }}>
+        <Toolbar>
+          <Typography variant="h6">
+            Progress Monitor by Sathwik Amburi
+          </Typography>
+          <Box sx={{ flexGrow: 1 }} />
+          <IconButton
+            color="inherit"
             href="https://github.com/Sathwik-Amburi/kiutra-coding-assignment"
-            className={styles.card}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
           >
-            <h2 className={inter.className}>
-              Project Repo <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find the code for this project on&nbsp;Github.
-            </p>
-          </a>
-        </div>
-      </main>
+            <GitHub />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+
+      <Box sx={{ mt: 2, mb: 2 }}>
+        <Typography variant="h4" align="center">
+          Progress Monitor
+        </Typography>
+      </Box>
+
+      <div>
+        <ProgressMonitor />
+      </div>
+
+      <Box sx={{ position: "fixed", bottom: "2rem", right: "2rem" }}>
+        <Fab
+          color="secondary"
+          aria-label="GitHub Repo"
+          href="https://github.com/Sathwik-Amburi/kiutra-coding-assignment"
+          target="_blank"
+          rel="noopener"
+        >
+          <GitHub />
+        </Fab>
+      </Box>
     </>
   );
 }
