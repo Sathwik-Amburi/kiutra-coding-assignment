@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const tasks = [
   {
     id: Date.now(),
-    Task: "Complete Progress Monitor",
-    description: "Implment the Progress Monitor",
+    Task: "Complete Progress Monitor.",
+    description: "Implment the Progress Monitor.",
     status: "Completed",
   },
 ];
